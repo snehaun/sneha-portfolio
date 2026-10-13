@@ -147,17 +147,25 @@ useEffect(() => {
           </p>
 
 
-          <div className="hero-buttons">
+          
+<div className="hero-buttons">
 
-            <button className="primary-btn">
-              Explore My Work ↓
-            </button>
+  <a
+    href="#projects"
+    className="hero-btn primary"
+  >
+    Explore My Work ↓
+  </a>
 
-            <button className="secondary-btn">
-              Let's Connect ↗
-            </button>
+  <a
+    href="#contact"
+    className="hero-btn secondary"
+  >
+    Let's Connect ↗
+  </a>
 
-          </div>
+</div>
+
 
         </div>
 
@@ -183,17 +191,30 @@ useEffect(() => {
           </div>
 
 
-          <div className="floating-card card-one">
-            JAVA
-          </div>
+          
+<div className="floating-card card-one">
+  JAVA
+</div>
 
-          <div className="floating-card card-two">
-            AI / ML
-          </div>
+<div className="floating-card card-two">
+  AI / ML
+</div>
 
-          <div className="floating-card card-three">
-            REACT
-          </div>
+<div className="floating-card card-three">
+  REACT
+</div>
+
+<div className="floating-card card-four">
+  PYTHON
+</div>
+
+<div className="floating-card card-five">
+  SQL
+</div>
+
+<div className="floating-card card-six">
+  C++
+</div>
 
         </div>
 

@@ -18,9 +18,15 @@ a {
   font-family: inherit;
 }
 
+
 .portfolio {
+  width: 100%;
+  max-width: none;
   min-height: 100vh;
+  margin: 0;
   overflow: hidden;
+  box-sizing: border-box;
+
   background:
     radial-gradient(
       circle at 75% 45%,
@@ -29,6 +35,7 @@ a {
     ),
     #050505;
 }
+
 
 
 /* NAVBAR */
@@ -126,10 +133,17 @@ a {
 
 .hero-buttons {
   display: flex;
-  gap: 15px;
-  margin-top: 35px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
 .primary-btn,
 .secondary-btn {
   padding: 15px 24px;
@@ -1971,3 +1985,374 @@ a {
 .contact-section {
   animation: fadeIn 1s ease forwards;
 }
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.hero-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 15px 24px;
+  min-height: 54px;
+
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* PRIMARY BUTTON */
+
+.hero-btn.primary {
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #7957ff,
+    #5936d9
+  );
+
+  border: 1px solid rgba(180, 160, 255, 0.5);
+
+  box-shadow:
+    0 6px 22px rgba(110, 80, 255, 0.2);
+}
+
+.hero-btn.primary:hover {
+  transform: translateY(-4px);
+
+  background: linear-gradient(
+    135deg,
+    #9279ff,
+    #6c49ef
+  );
+
+  box-shadow:
+    0 10px 32px rgba(110, 80, 255, 0.4);
+}
+
+/* SECONDARY BUTTON */
+
+.hero-btn.secondary {
+  color: #eee;
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(12px);
+}
+
+.hero-btn.secondary:hover {
+  transform: translateY(-4px);
+
+  color: #fff;
+  background: rgba(110, 80, 255, 0.1);
+
+  border-color: rgba(150, 125, 255, 0.65);
+
+  box-shadow:
+    0 8px 28px rgba(110, 80, 255, 0.12);
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.hero-btn:focus-visible {
+  outline: 2px solid #a995ff;
+  outline-offset: 4px;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .hero-btn {
+    padding: 13px 16px;
+    min-height: 48px;
+    font-size: 0.82rem;
+  }
+}
+
+/* RESPECT REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-btn {
+    transition: none;
+  }
+
+  .hero-btn:hover {
+    transform: none;
+  }
+}
+
+/* HERO HEADING VISIBILITY FIX */
+
+.hero h1 {
+  color: #f5f5f7;
+}
+
+/* Make filled text clearly visible */
+.hero h1 .text-solid {
+  color: #f5f5f7;
+  -webkit-text-fill-color: #f5f5f7;
+  opacity: 1;
+}
+
+/* Keep the outlined text crisp */
+.hero h1 .text-outline {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px #f5f5f7;
+  opacity: 1;
+}
+
+/* About section: matching lavender-blue accent */
+
+.about-section h2 {
+  color: #aaa0ff;
+}
+
+/* Keep the outlined words elegant */
+.about-section h2 span {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px #e4e0ff;
+}
+
+/* Make filled words visible in the background */
+.about-section h2 .text-solid {
+  color: #aaa0ff;
+  -webkit-text-fill-color: #aaa0ff;
+}
+
+/* =================================
+   GLOBAL SECTION HEADING ACCENT
+================================= */
+
+/* Make dark filled headings visible */
+.about-section h2,
+.projects-section h2,
+.skills-section h2,
+.journey-section h2,
+.terminal-section h2,
+.contact-section h2 {
+  color: #aaa0ff;
+}
+
+/* Keep outlined heading text crisp */
+.about-section h2 span,
+.projects-section h2 span,
+.skills-section h2 span,
+.journey-section h2 span,
+.terminal-section h2 span,
+.contact-section h2 span {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.3px #e4e0ff;
+  opacity: 1;
+}
+
+.terminal-history {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.terminal-entry pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+  line-height: 1.7;
+}
+
+.terminal-entry .user {
+  color: #c4b5fd;
+}
+
+.terminal-entry .system {
+  color: #d1d5db;
+}
+
+.terminal-entry .error {
+  color: #fca5a5;
+}
+
+.terminal-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #c4b5fd;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.terminal-link:hover {
+  color: #ffffff;
+}
+
+.terminal-input input {
+  min-width: 0;
+  flex: 1;
+}
+
+/* Keep the skill cards positioned around the sphere */
+.hero-visual {
+  position: relative;
+}
+
+.floating-card {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 22px;
+  min-height: 64px;
+  box-sizing: border-box;
+  white-space: nowrap;
+
+  background: rgba(22, 22, 26, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  color: #f5f3ff;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  animation: skillFloat 4s ease-in-out infinite;
+}
+
+/* Different positions around the sphere */
+.card-one {
+  top: 5%;
+  right: 5%;
+  animation-delay: 0s;
+}
+
+.card-two {
+  top: 66%;
+  left: 2%;
+  animation-delay: -1s;
+}
+
+.card-three {
+  right: 14%;
+  bottom: 5%;
+  animation-delay: -2s;
+}
+
+.card-four {
+  top: 12%;
+  left: 3%;
+  animation-delay: -0.5s;
+}
+
+.card-five {
+  top: 42%;
+  right: -2%;
+  animation-delay: -1.5s;
+}
+
+.card-six {
+  bottom: 12%;
+  left: 15%;
+  animation-delay: -2.5s;
+}
+
+@keyframes skillFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Prevent cards from crowding the sphere on smaller screens */
+@media (max-width: 600px) {
+  .floating-card {
+    padding: 12px 14px;
+    min-height: 46px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .card-one {
+    top: 2%;
+    right: 0;
+  }
+
+  .card-two {
+    top: 72%;
+    left: 0;
+  }
+
+  .card-three {
+    right: 0;
+    bottom: 3%;
+  }
+
+  .card-four {
+    top: 12%;
+    left: 0;
+  }
+
+  .card-five {
+    top: 43%;
+    right: 0;
+  }
+
+  .card-six {
+    bottom: 12%;
+    left: 5%;
+  }
+}
+
+
+
+
+
+
+
+
